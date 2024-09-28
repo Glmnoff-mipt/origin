@@ -1,11 +1,11 @@
 #include <iostream>
 
 
-
+int matrix_size;
 double determinant(double* matrix, int matrix_size){
     for (int i = 0; i < matrix_size; i++){
         for (int j = i + 1; j < matrix_size; j++){
-            int kf; 
+            double kf; 
             kf = matrix[j*matrix_size + i] / matrix[i*matrix_size + i];
             for (int k = i; k < matrix_size; k++){
                 matrix[j*matrix_size + k] -= kf*matrix[i*matrix_size + k];
@@ -31,7 +31,6 @@ double determinant(double* matrix, int matrix_size){
 
 
 int main(){
-    int matrix_size;
     double* matrix = new double[matrix_size * matrix_size];
 
     std::cout << "Enter your matrix's size: " << std::endl;
